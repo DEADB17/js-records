@@ -41,22 +41,22 @@ test('tuple instance API', function (t) {
 
 
 
-var makeRecord = require('../record');
+var makeStruct = require('../struct');
 
-test('record class API', function (t) {
+test('struct class API', function (t) {
   t.plan(4);
 
-  var klass = makeRecord();
+  var klass = makeStruct();
   t.ok('make' in klass, 'has make');
   t.equal(typeof klass.make, 'function', 'make is function');
   t.ok('is' in klass, 'has is');
   t.equal(typeof klass.is, 'function', 'is is function');
 });
 
-test('record instance API', function (t) {
+test('struct instance API', function (t) {
   t.plan(12);
 
-  var klass = makeRecord('val');
+  var klass = makeStruct('val');
   t.ok('val' in klass, 'has val');
   t.equal(typeof klass.val, 'function', 'val is function');
   t.equal(klass.val.length, 2, 'val is a function of 2 arguments');
