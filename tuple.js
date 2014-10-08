@@ -18,7 +18,6 @@ module.exports = function (/*fields*/) {
     var mod = {
         make: make,
         is: function (t) { return t[0] === make; },
-        app: function (fn, t) { return fn.apply(undefined, t); }
     };
     var i = 0;
     var n = fields.length;

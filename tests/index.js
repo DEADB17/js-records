@@ -6,19 +6,17 @@ var test = require('tape');
 var makeTuple = require('../tuple');
 
 
-test('base API', function (t) {
-  t.plan(6);
+test('class API', function (t) {
+  t.plan(4);
 
   var klass = makeTuple();
   t.ok('make' in klass, 'has make');
   t.equal(typeof klass.make, 'function', 'make is function');
   t.ok('is' in klass, 'has is');
   t.equal(typeof klass.is, 'function', 'is is function');
-  t.ok('app' in klass, 'has app');
-  t.equal(typeof klass.app, 'function', 'app is function');
 });
 
-test('API with arguments', function (t) {
+test('instance API', function (t) {
   t.plan(12);
 
   var klass = makeTuple('val');
