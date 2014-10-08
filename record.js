@@ -30,7 +30,8 @@ module.exports = function (/*fields*/) {
                 var type = typeof(newVal);
                 if (type !== 'undefined') {
                     if (type === 'function') {
-                        return newVal(val, f, r, mod);
+                        r[f] = newVal(val, f, r, mod);
+                        return r;
                     } else {
                         r[f] = newVal;
                         return r;
